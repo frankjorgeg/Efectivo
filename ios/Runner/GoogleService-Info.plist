@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>475319325289-9clicdnj8vnoqr2mb6jlqo2gpaabamge.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.475319325289-9clicdnj8vnoqr2mb6jlqo2gpaabamge</string>
+	<key>API_KEY</key>
+	<string>AIzaSyC3LXXPsiLG8rfNP_D9z7VqUn_3Hbawyhw</string>
+	<key>GCM_SENDER_ID</key>
+	<string>475319325289</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.dualsoft.efectivo</string>
+	<key>PROJECT_ID</key>
+	<string>efecti</string>
+	<key>STORAGE_BUCKET</key>
+	<string>efecti.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:475319325289:ios:09c934ef59d118749988f8</string>
+	<key>DATABASE_URL</key>
+	<string>https://efecti.firebaseio.com</string>
+</dict>
+</plist>
