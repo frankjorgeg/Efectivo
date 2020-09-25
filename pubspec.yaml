@@ -12,11 +12,29 @@ dependencies:
   flutter:
     sdk: flutter
 
-  cupertino_icons: ^0.1.2
+  # Funcional programing
+  dartz: ^0.9.1
+
+  # Bloc Dependecies
+  bloc: ^6.0.3
+  flutter_bloc: ^6.0.5
+
+  # Value equality
+  equatable: ^1.2.5
+
+  # Firebase dependecies
+  firebase_core: ^0.5.0
+  firebase_auth: ^0.18.0+1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+  # Linting
+  pedantic: ^1.9.0
+
+  # testing
+  mockito: ^4.1.1
 
   font_awesome_flutter: ^8.0.1
 
@@ -25,8 +43,8 @@ flutter:
   uses-material-design: true
 
   assets:
-      - assets/login_logo.png
-      - assets/logo_efectivo.png
+    - assets/login_logo.png
+    - assets/logo_efectivo.png
 
   fonts:
     - family: WorkSansSemiBold
@@ -40,3 +58,4 @@ flutter:
     - family: WorkSansMedium
       fonts:
         - asset: assets/fonts/Work_Sans/WorkSans-Medium.ttf
+
