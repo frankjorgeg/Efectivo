@@ -17,7 +17,7 @@ void main() {
 
   setUp(() {
     mockFirebaseAuth = MockFirebaseAuth();
-    repository = AuthRepositoryFirebaseImpl(firebaseAuth: mockFirebaseAuth);
+    repository = AuthRepositoryFirebaseImpl(mockFirebaseAuth);
     userCredential = MockUserCredential();
   });
 
@@ -26,7 +26,7 @@ void main() {
     () async {
       when(mockFirebaseAuth.currentUser).thenReturn(null);
 
-      final result = await repository.getSignInUser();
+      final result = await repository.getSignedUser();
 
       expect(result, Left(AuthFailure(message: 'user not found')));
     },

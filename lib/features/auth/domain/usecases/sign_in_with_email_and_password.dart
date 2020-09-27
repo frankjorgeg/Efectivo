@@ -1,11 +1,13 @@
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
+import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
 
-import '../../../../core/failures/failures.dart';
 import '../../../../core/usecases/usecase.dart';
+import '../failures/auth_failures.dart';
 import '../repositories/auth_repository.dart';
 
+@lazySingleton
 class SignInWithEmailAndPasswordUsecase
     implements IUseCase<Unit, SignInWithEmailAndPasswordUsecaseParams> {
   final IAuthRepository authRepository;
@@ -13,7 +15,7 @@ class SignInWithEmailAndPasswordUsecase
   SignInWithEmailAndPasswordUsecase({@required this.authRepository});
 
   @override
-  Future<Either<Failure, Unit>> call(
+  Future<Either<AuthFailure, Unit>> call(
     SignInWithEmailAndPasswordUsecaseParams params,
   ) async {
     return await authRepository.signInWithEmailAndPassword(

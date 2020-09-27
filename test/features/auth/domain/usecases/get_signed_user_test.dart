@@ -6,17 +6,17 @@ import 'package:Efectivo/core/usecases/usecase.dart';
 import 'package:Efectivo/features/auth/domain/entities/UserEntity.dart';
 import 'package:Efectivo/features/auth/domain/failures/auth_failures.dart';
 import 'package:Efectivo/features/auth/domain/repositories/auth_repository.dart';
-import 'package:Efectivo/features/auth/domain/usecases/get_sign_in_user.dart';
+import 'package:Efectivo/features/auth/domain/usecases/get_signed_user.dart';
 
 class MockAuthRepository extends Mock implements IAuthRepository {}
 
 void main() {
   MockAuthRepository mockAuthRepository;
-  GetSignInUserUseCase usecase;
+  GetSignedUserUseCase usecase;
 
   setUp(() {
     mockAuthRepository = MockAuthRepository();
-    usecase = GetSignInUserUseCase(authRepository: mockAuthRepository);
+    usecase = GetSignedUserUseCase(authRepository: mockAuthRepository);
   });
 
   final userEntity = UserEntity(uuid: '1', email: 'test@test.com');
@@ -24,13 +24,13 @@ void main() {
   test(
     'should call the method [getSignInUser] from [AuthRepository] with success data',
     () async {
-      when(mockAuthRepository.getSignInUser())
+      when(mockAuthRepository.getSignedUser())
           .thenAnswer((_) async => Right(userEntity));
 
       final result = await usecase(const NoParams());
 
       expect(result, Right(userEntity));
-      verify(mockAuthRepository.getSignInUser());
+      verify(mockAuthRepository.getSignedUser());
       verifyNoMoreInteractions(mockAuthRepository);
     },
   );
@@ -40,13 +40,13 @@ void main() {
   test(
     'should call the method [getSignInUser] from [AuthRepository] with failure data',
     () async {
-      when(mockAuthRepository.getSignInUser())
+      when(mockAuthRepository.getSignedUser())
           .thenAnswer((_) async => Left(failure));
 
       final result = await usecase(const NoParams());
 
       expect(result, Left(failure));
-      verify(mockAuthRepository.getSignInUser());
+      verify(mockAuthRepository.getSignedUser());
       verifyNoMoreInteractions(mockAuthRepository);
     },
   );

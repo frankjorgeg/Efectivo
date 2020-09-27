@@ -1,8 +1,10 @@
 import 'package:dartz/dartz.dart';
+import 'package:injectable/injectable.dart';
 
 import '../../features/auth/domain/failures/auth_failures.dart';
 import '../failures/failures.dart';
 
+@LazySingleton()
 class Validations {
   Either<Failure, String> validateEmailAddress(String input) {
     const emailRegex =
